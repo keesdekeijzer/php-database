@@ -15,8 +15,17 @@ catch(PDOException $e)
     echo "Verbinding mislukt: " . $e->getMessage();
     }
 
-
-
+// database maken
+try {
+    $sql = "CREATE DATABASE mijnDBPDO";
+    // gebruik exec() want er wordt niets teruggegeven
+    $conn->exec($sql);
+    echo "Aanmaken database gelukt<br>";
+    }
+catch(PDOException $e)
+    {
+    echo $sql . "<br>" . $e->getMessage();
+    }
 
 
 ?> 

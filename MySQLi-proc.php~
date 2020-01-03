@@ -14,7 +14,13 @@ if (!$conn) {
 echo "Succesvol verbonden";
 
 
-
+// Maak database
+$sql = "CREATE DATABASE mijnDB";
+if (mysqli_query($conn, $sql)) {
+    echo "Aanmaken database gelukt";
+} else {
+    echo "Fout bij het maken van de database: " . mysqli_error($conn);
+}
 
 
 ?> 
